@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Information Form</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <form enctype="multipart/form-data" action="index.html" method="get">
-        <!-- FORM FIELDS HERE -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <form
+      class="profile-form"
+      enctype="multipart/form-data"
+      action="index.html"
+      method="get"
+    >
+      <fieldset class="form-section">
+        <legend>Personal Information</legend>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="12"
+            required
+          />
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Preferences</legend>
+        <div class="form-group">
+          <label for="hobby">Hobby:</label>
+          <input type="text" id="hobby" name="hobby" list="hobby-options" />
+          <datalist id="hobby-options">
+            <option value="Drawing"></option>
+            <option value="Swimming"></option>
+            <option value="Dancing"></option>
+          </datalist>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Contact Preferences</legend>
+        <div class="form-group">
+          <label for="contact">Preferred Contact Method:</label>
+          <select id="contact" name="contact">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="mail">Mail</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Upload Documents</legend>
+        <div class="form-group">
+          <label for="documents">Resume and other certificates:</label>
+          <input
+            type="file"
+            id="documents"
+            name="documents"
+            accept=".doc,.docx,.pdf,.jpg,.jpeg,.png"
+            multiple
+          />
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section actions">
+        <legend>Submission</legend>
+        <div class="button-group">
+          <button type="reset" class="btn secondary">Reset</button>
+          <button type="submit" class="btn primary">Submit</button>
+        </div>
+      </fieldset>
     </form>
-</body>
+  </body>
 </html>
